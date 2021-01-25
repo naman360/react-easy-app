@@ -106,43 +106,69 @@ inquirer
           if (err) console.log(err);
         });
 
-        fs.readFile(`./assets/index.html`, (err, content) => {
-          if (err) console.log(err);
+        fs.writeFile(
+          `${dataStore.projectName}/public/index.html`,
+          `<!DOCTYPE html>
+            <html>
+              <head>
+                <title>React Easy App</title>
+                <link rel="stylesheet" href="../src/style.css" />
+              </head>
+              <body>
+                <div id="app"></div>
+                <script src="../src/index.js"></script>
+              </body>
+            </html>
+            `,
+          (err) => {
+            if (err) console.log(err);
+          }
+        );
 
-          fs.writeFile(
-            `${dataStore.projectName}/public/index.html`,
-            content,
-            (err) => {
-              if (err) console.log(err);
-            }
-          );
-        });
         fs.mkdir(`${dataStore.projectName}/src`, (err) => {
           if (err) console.log(err);
         });
-        fs.readFile(`./assets/style.css`, (err, content) => {
-          if (err) console.log(err);
 
-          fs.writeFile(
-            `${dataStore.projectName}/src/style.css`,
-            content,
-            (err) => {
-              if (err) console.log(err);
+        fs.writeFile(
+          `${dataStore.projectName}/src/style.css`,
+          `body {
+                background-color: black;
+                color: white;
+                font-size: 28px;
+                text-align: center;
+              }
+              `,
+          (err) => {
+            if (err) console.log(err);
+          }
+        );
+
+        fs.writeFile(
+          `${dataStore.projectName}/src/index.js`,
+
+          `import React from "react";
+          import ReactDOM from "react-dom";
+          
+          class HelloMessage extends React.Component {
+            render() {
+              return (
+                <div>
+                  <div className="container">
+                    <h1>Made Using {this.props.name}</h1>
+                  </div>
+                </div>
+              );
             }
-          );
-        });
-
-        fs.readFile(`./assets/index.js`, (err, content) => {
-          if (err) console.log(err);
-
-          fs.writeFile(
-            `${dataStore.projectName}/src/index.js`,
-            content,
-            (err) => {
-              if (err) console.log(err);
-            }
-          );
-        });
+          }
+          
+          let App = document.getElementById("app");
+          
+          ReactDOM.render(<HelloMessage name="React Easy" />, App);
+          `,
+          (err) => {
+            if (err) console.log(err);
+          }
+        );
       }
     );
   });
