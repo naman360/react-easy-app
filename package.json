@@ -1,5 +1,5 @@
 {
-  "name": "react-easy-app",
+  "name": "@naman360/react-easy-app",
   "version": "1.0.0",
   "description": "Create a React app using parcel and minimum configuration.",
   "main": "index.js",
