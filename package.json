@@ -1,0 +1,28 @@
+{
+  "name": "react-easy-app",
+  "version": "1.0.0",
+  "description": "Create a React app using parcel and minimum configuration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "react-easy-app": "index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "edit-package-json": "^0.3.0",
+    "figlet": "^1.5.0",
+    "inquirer": "^7.3.3",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}
