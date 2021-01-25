@@ -104,11 +104,10 @@ inquirer
         );
         fs.mkdir(`${dataStore.projectName}/public`, (err) => {
           if (err) console.log(err);
-        });
 
-        fs.writeFile(
-          `${dataStore.projectName}/public/index.html`,
-          `<!DOCTYPE html>
+          fs.writeFile(
+            `${dataStore.projectName}/public/index.html`,
+            `<!DOCTYPE html>
             <html>
               <head>
                 <title>React Easy App</title>
@@ -120,33 +119,33 @@ inquirer
               </body>
             </html>
             `,
-          (err) => {
-            if (err) console.log(err);
-          }
-        );
+            (err) => {
+              if (err) console.log(err);
+            }
+          );
+        });
 
         fs.mkdir(`${dataStore.projectName}/src`, (err) => {
           if (err) console.log(err);
-        });
 
-        fs.writeFile(
-          `${dataStore.projectName}/src/style.css`,
-          `body {
+          fs.writeFile(
+            `${dataStore.projectName}/src/style.css`,
+            `body {
                 background-color: black;
                 color: white;
                 font-size: 28px;
                 text-align: center;
               }
               `,
-          (err) => {
-            if (err) console.log(err);
-          }
-        );
+            (err) => {
+              if (err) console.log(err);
+            }
+          );
 
-        fs.writeFile(
-          `${dataStore.projectName}/src/index.js`,
+          fs.writeFile(
+            `${dataStore.projectName}/src/index.js`,
 
-          `import React from "react";
+            `import React from "react";
           import ReactDOM from "react-dom";
           
           class HelloMessage extends React.Component {
@@ -165,10 +164,11 @@ inquirer
           
           ReactDOM.render(<HelloMessage name="React Easy" />, App);
           `,
-          (err) => {
-            if (err) console.log(err);
-          }
-        );
+            (err) => {
+              if (err) console.log(err);
+            }
+          );
+        });
       }
     );
   });
