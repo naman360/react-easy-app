@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const { exec } = require("child_process");
+const { exec: spawn } = require("child_process");
 const { stdout } = require("process");
 const fs = require("fs");
 const chalk = require("chalk");
@@ -48,10 +48,10 @@ inquirer
     answer.author === "" ? "" : (dataStore.author = answer.author);
 
     console.log(dataStore);
-    exec(`mkdir ${dataStore.projectName}`, (err, stdout, stdin) => {
+    spawn(`mkdir ${dataStore.projectName}`, (err, stdout, stdin) => {
       if (err) console.log(err);
     });
-    exec(
+    spawn(
       `npm init -y`,
       { cwd: dataStore.projectName },
       (err, stdout, stdin) => {
@@ -84,10 +84,10 @@ inquirer
           }
         );
 
-        exec(
+        spawn(
           `cd ${dataStore.projectName} &&  npm i react react-dom parcel-bundler`
         );
-        exec(
+        spawn(
           `cd ${dataStore.projectName} &&  npm i babel-preset-env babel-preset-react --save-dev`
         );
         fs.writeFile(
